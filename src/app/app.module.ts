@@ -2,13 +2,21 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppComponent } from './app.component';
+import { ButonComponent } from './buton/buton.component';
+import { LimpiezaComponent } from './productos/limpieza/limpieza.component';
+import { HigieneComponent } from './productos/higiene/higiene.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    ButonComponent,
+    LimpiezaComponent,
+    HigieneComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

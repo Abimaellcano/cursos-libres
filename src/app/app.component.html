@@ -18,7 +18,6 @@
 
 <!-- <button *ngIf="pais == 'Guatemala'">Cerrar Sesión</button> -->
 
-
 <!-- <button *ngIf="(10+30) == 70">Cerrar Sesión</button> -->
 <!--
 <ol>
@@ -34,7 +33,7 @@
 
   </ul> -->
 
-  <!-- <ol>
+<!-- <ol>
     <li *ngFor="let persona of personas">{{persona.nombre + ' ' + persona.apellido}}</li>
   </ol>
   <br><br>
@@ -52,7 +51,71 @@
     </li>
   </ol> -->
 
-<button [ngClass]="boton_desactivado == false ? 'boton_activo' : 'boton_desactivado' ">Enviar</button>
-<br><br>
+<!-- <button [ngClass]="boton_desactivado == false ? 'boton_activo' : 'boton_desactivado' ">Enviar</button>
+<br><br> -->
 
-<button (click)="cambioClase()">Cambiar Valor</button>
+<!-- <button (click)="cambioClase()">Cambiar Valor</button> -->
+
+<!-- <p [ngStyle]="{'background-color': boton_desactivado ? 'gray' : 'blue'}" >Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis architecto dignissimos porro tenetur, voluptate maxime asperiores autem quo delectus, harum totam in exercitationem, aliquid corrupti aliquam necessitatibus libero impedit quibusdam?</p> -->
+
+<!-- <p>Nota = <label [ngStyle]="{'color': calificacion > 60 ? 'blue' : 'red'}">{{calificacion}}</label></p> -->
+
+<!-- <div [ngSwitch]="pais">
+  <p *ngSwitchCase="'Guatemala'">Moneda Nacional: Quetzal</p>
+  <p *ngSwitchCase="'Honduras'">Moneda Nacional: Lempira</p>
+  <p *ngSwitchCase="'El Salvador'">Moneda Nacional: Dolar</p>
+  <p *ngSwitchCase="'México'">Moneda Nacional: Peso</p>
+
+</div> -->
+
+<!--
+<ol>
+  <li *ngFor="let item of personas">
+    <p (click)="seleccionarNombre(item.nombre)" (mouseenter)="cursoApellido($event, item.apellido)" (mouseleave)="cursoApellido($event, item.apellido)">
+       {{item.nombre}} {{item.apellido}}</p>
+  </li>
+</ol> -->
+
+<!-- <div>
+  <P *ngIf="nombre_seleccionado">Nombre Seleccionado: {{nombre_seleccionado}}</P>
+  <P *ngIf="apellido_curso">El curso esta sobre el apellido: {{apellido_curso}}</P>
+</div> -->
+
+<!-- <div>
+  <input type="text" (keypress)="eventoTeclado($event)">
+</div> -->
+
+<!-- <div>
+  <input type="text" (change)="cambiosInput($event)">
+</div> -->
+
+<!-- <div>
+<app-higiene *ngIf="!mostrar_limpieza"></app-higiene>
+<app-limpieza *ngIf="mostrar_limpieza"></app-limpieza>
+
+<button (click)="cambioComponente()">Cambio de Componente</button>
+
+</div> -->
+
+<div class="container mt-3">
+  <div class="row">
+    <div class="col-3">
+      <ul>
+        <li *ngFor="let item of personas"
+          [ngStyle]="{'background-color': item === persona_seleccionada ? item.color: ''}"
+          [ngClass]="{'persona_seleccionada': item === persona_seleccionada}">
+          {{item.nombre}}
+        </li>
+      </ul>
+
+      <button class="btn btn-info" (click)="personaAleatorea()">Seleccionar Nombre</button>
+
+    </div>
+
+    <div class="col-3" *ngIf="persona_seleccionada>
+
+    </div>
+
+  </div>
+
+</div>

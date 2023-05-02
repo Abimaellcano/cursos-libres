@@ -1,10 +1,22 @@
-import { Component } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-higiene',
   templateUrl: './higiene.component.html',
   styleUrls: ['./higiene.component.css']
 })
-export class HigieneComponent {
+export class HigieneComponent  implements OnInit, OnDestroy{
+
+
+ngOnInit(): void {
+    console.log('ngOnInit -> HigieneComponent ');
 
 }
+
+ngOnDestroy(): void {
+    console.log('ngDestroy -> HigieneComponent');
+}
+
+}
+
+

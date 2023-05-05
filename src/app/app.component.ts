@@ -23,6 +23,7 @@ export class AppComponent implements OnInit{
 
 
 
+
   // personas = [
 
   //   'Manuel',
@@ -34,11 +35,11 @@ export class AppComponent implements OnInit{
   // ]
 
   personas = [
-    {nombre: 'Manuel', apellido: 'Concoba', color: 'red'},
-    {nombre: 'Juan', apellido: 'Hernandez', color: 'blue'},
-    {nombre: 'Felipe', apellido: 'Gonzalez', color: 'green'},
-    {nombre: 'Carlos', apellido: 'Rivera', color: 'purple'},
-    {nombre: 'Mario', apellido: 'Lopez', color: 'brown'},
+    {id: 1, nombre: 'Manuel', apellido: 'Concoba', color: 'red'},
+    {id: 2, nombre: 'Juan', apellido: 'Hernandez', color: 'blue'},
+    {id: 3, nombre: 'Felipe', apellido: 'Gonzalez', color: 'green'},
+    {id: 4, nombre: 'Carlos', apellido: 'Rivera', color: 'purple'},
+    {id: 5, nombre: 'Mario', apellido: 'Lopez', color: 'brown'},
 
 
 
@@ -46,6 +47,7 @@ export class AppComponent implements OnInit{
 
     mensaje!: String
     mostrar_limpieza = true
+    buscar = ''
 
   //CICLO DE VIDA DE UN COMPONENTE
   ngOnInit(): void {
@@ -124,7 +126,7 @@ iniciarSesion(eveto: Event){
 // @Input & @Output
 
 personaAleatorea() {
-  const posicionAleatorea = Math.floor(Math.random() * this.personas.length -1)
+  const posicionAleatorea = Math.floor(Math.random() * this.personas.length)
   const personaAleatorea = this.personas[posicionAleatorea]
 
   if(personaAleatorea === this.persona_seleccionada){
@@ -134,6 +136,15 @@ personaAleatorea() {
   }
 
 }
+
+agregarPersona(persona: any){
+  const id = this.personas[this.personas.length -1].id
+  this.personas.push({id: id +1, nombre: persona.nombre, apellido: persona.apellido, color: persona.color})
+}
+
+
+//Pipe's
+
 
 
 }

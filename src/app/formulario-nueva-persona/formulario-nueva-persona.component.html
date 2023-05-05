@@ -1,0 +1,22 @@
+<div class="card">
+  <div class="card-body">
+    <form #formulario>
+      <div class="mb-3">
+        <label for="" class="form-label">Nombre</label>
+        <input type="text" class="form-control" id="nombre" #nombre>
+      </div>
+      <div class="mb-3">
+        <label for="" class="form-label">Apellido</label>
+        <input type="text" class="form-control" id="apellido" #apellido>
+      </div>
+      <div class="mb-3">
+        <label for="" class="form-label">Color</label>
+        <input type="text" class="form-control" id="color" #color>
+      </div>
+      <div class="text-center">
+        <button (click)="enviarDatos(nombre.value, apellido.value, color.value, formulario)" class="btn btn-primary">Agregar</button>
+      </div>
+
+    </form>
+  </div>
+</div>

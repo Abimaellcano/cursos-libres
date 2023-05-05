@@ -1,0 +1,10 @@
+<div class="card">
+  <div class="card-header" >
+    Nuevo Ganador
+  </div>
+  <div class="card-body" [ngStyle]="{'background-color': ganador.color }">
+    <h5 class="card-title">{{ganador.id}} | {{ganador.nombre | uppercase}} {{ganador.apellido}}</h5>
+    <p class="card-text">Felicidades</p>
+  </div>
+
+</div>

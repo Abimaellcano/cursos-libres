@@ -1,4 +1,4 @@
-<app-buton></app-buton>
+<!-- <app-buton></app-buton> -->
 <!-- <app-limpieza></app-limpieza> -->
 
 <!-- <h2>Bienvenidos a {{title}}</h2>
@@ -99,9 +99,19 @@
 
 <div class="container mt-3">
   <div class="row">
+    <div class="col-6">
+      <app-formulario-nueva-persona (persona)="agregarPersona($event)">
+
+      </app-formulario-nueva-persona>
+
+    </div>
+
+
+
     <div class="col-3">
+      <input type="text" class="form-control mb-3" placeholder="Buscar..." [(ngModel)]= "buscar">
       <ul>
-        <li *ngFor="let item of personas"
+        <li *ngFor="let item of (personas | filtro: buscar)"
           [ngStyle]="{'background-color': item === persona_seleccionada ? item.color: ''}"
           [ngClass]="{'persona_seleccionada': item === persona_seleccionada}">
           {{item.nombre}}
@@ -112,9 +122,42 @@
 
     </div>
 
-    <div class="col-3" *ngIf="persona_seleccionada>
+    <div class="col-6" *ngIf="persona_seleccionada">
+      <app-target-ganador [ganador]="persona_seleccionada"></app-target-ganador>
+
 
     </div>
+
+  </div>
+  <!-- <p>{{'3.1416' | number: '1.0-3'}}</p> -->
+  <p>{{'4/28/23' | date: 'full'}}</p>
+
+  <div class="row mt-5">
+    <div class="col-3">
+      <div [ngSwitch]="pais">
+
+
+        <div *ngSwitchCase="'Guatemala'">
+        <p >Moneda Nacional: Quetzal</p>
+        <p>El billede de mayor valor es {{'200'| currency: 'GTQ' }}</p>
+
+        </div>
+
+        <div *ngSwitchCase="'España'">
+          <p >Moneda Nacional: Euro</p>
+          <p>El billede de mayor valor es {{'500'| currency: 'EUR' }}</p>
+
+          </div>
+        <p *ngSwitchCase="'Honduras'">Moneda Nacional: Lempira</p>
+        <p *ngSwitchCase="'El Salvador'">Moneda Nacional: Dolar</p>
+        <p *ngSwitchCase="'México'">Moneda Nacional: Peso</p>
+        <p *ngSwitchDefault=>Ingrese un país válido</p>
+
+      </div>
+      <input type="text" [(ngModel)]="pais">
+
+    </div>
+
 
   </div>
 
